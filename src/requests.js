@@ -30,8 +30,17 @@ const wrapPromise = (promise) => {
     }
 }
 
+export const randomNumber = async () => {
+    return new Promise(resolve => (
+        setTimeout(() => {
+            resolve(Math.random())
+        }, 2500)
+    ))
+}
+
 export const createResource = () => {
     return {
-        person: wrapPromise(fetchPerson())
+        person: wrapPromise(fetchPerson()),
+        num: wrapPromise(randomNumber())
     }
 }
