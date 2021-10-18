@@ -1,9 +1,12 @@
 import React from "react";
 
-export const Person = () => {
+export const Person = ({
+    resource
+}) => {
+    const person = resource.person.read();
     return (
         <div>
-            Person
+            <p>First name: {person.name.first}</p>
         </div>
     )
 }
